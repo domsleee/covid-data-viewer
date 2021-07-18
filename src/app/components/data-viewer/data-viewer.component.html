@@ -1,0 +1,39 @@
+<style>
+  ngx-datatable {
+    height: 85vh;
+  }
+</style>
+
+<p class="mat-body-1">data from <a [href]="dataSource">{{dataSource}}</a></p>
+<p class="mat-body-1">last updated {{lastUpdated | date:'d-MMM-yyyy HH:mm:ss Z' : dateOffset}}</p>
+
+
+<a mat-stroked-button href="/" class="btn btn-primary submitSignUp">By Date</a>
+<a mat-stroked-button href="/{{aggregateRoute}}" class="btn btn-primary submitSignUp">Aggregate</a>
+<br /><br />
+
+<ngx-datatable
+  *ngIf="(activeRoute | async) != aggregateRoute"
+  class="material mat-body-1"
+  [rows]="entries"
+  [scrollbarV]="true"
+  [headerHeight]="50"
+  [footerHeight]="50"
+  [rowHeight]="50"
+  [columnMode]="columnMode"
+  [sorts]="[{ prop: 'notification_date', dir: 'desc' }]"
+  [columns]="entryColumns"></ngx-datatable>
+<ngx-datatable
+  *ngIf="(activeRoute | async) == aggregateRoute"
+  class="material mat-body-1"
+  [rows]="dateEntries"
+  [scrollbarV]="true"
+  [headerHeight]="50"
+  [footerHeight]="50"
+  [rowHeight]="50"
+  [columnMode]="columnMode"
+  [sorts]="[{ prop: 'date', dir: 'desc' }]"
+  [columns]="dateEntryColumns"></ngx-datatable>
+
+
+
