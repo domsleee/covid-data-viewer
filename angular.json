@@ -41,6 +41,8 @@
           },
           "configurations": {
             "production": {
+              "baseHref": "/covid-data-viewer/",
+              "deployUrl": "/covid-data-viewer/",
               "budgets": [
                 {
                   "type": "initial",
@@ -107,6 +109,10 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {}
         }
       }
     }

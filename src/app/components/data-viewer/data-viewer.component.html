@@ -8,8 +8,8 @@
 <p class="mat-body-1">last updated {{lastUpdated | date:'d-MMM-yyyy HH:mm:ss Z' : dateOffset}}</p>
 
 
-<a mat-stroked-button href="/" class="btn btn-primary submitSignUp">By Date</a>
-<a mat-stroked-button href="/{{aggregateRoute}}" class="btn btn-primary submitSignUp">Aggregate</a>
+<a mat-stroked-button routerLink="/" class="btn btn-primary submitSignUp">By Date</a>
+<a mat-stroked-button routerLink="/{{aggregateRoute}}" class="btn btn-primary submitSignUp">Aggregate</a>
 <br /><br />
 
 <ngx-datatable
