@@ -4,8 +4,8 @@
   }
 </style>
 
-<p class="mat-body-1">data from <a [href]="dataSource">{{dataSource}}</a></p>
-<p class="mat-body-1">last updated {{lastUpdated | date:'d-MMM-yyyy HH:mm:ss Z' : dateOffset}}</p>
+<p class="mat-body-1">Data from <a [href]="dataSource">{{dataSource}}</a></p>
+<p class="mat-body-1">Last updated: {{lastUpdated | date:'d-MMM-yyyy HH:mm:ss Z' : dateOffset}}</p>
 
 
 <a mat-stroked-button routerLink="/" class="btn btn-primary submitSignUp">By Date</a>

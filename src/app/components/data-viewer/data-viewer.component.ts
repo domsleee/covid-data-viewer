@@ -41,7 +41,6 @@ export class DataViewerComponent implements OnInit, OnDestroy {
   ) { }
 
   ngOnInit(): void {
-    console.log(this.dateOffset);
     this.activeRoute = this.route.url.pipe(map(t => t.toString()));
     this.dataViewerService.init();
     this.setupDoneSubscription = this.dataViewerService.getSetupDoneObservable().subscribe(() => {
@@ -51,8 +50,6 @@ export class DataViewerComponent implements OnInit, OnDestroy {
 
       this.setupDone = true;
     });
-
-    console.log('sdfklsdj', new DatePipe('en-AU').transform(new Date(), 'hh'));
   }
 
   ngOnDestroy() {

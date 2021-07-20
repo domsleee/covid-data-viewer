@@ -43,7 +43,7 @@ export class DataViewerService {
     return this.http.get<IDataResult>(DATA_URL).pipe(
       map(ret => {
         const resource = ret.result.resources[0];
-        this.lastUpdateDate = new Date(resource.last_modified);
+        this.lastUpdateDate = new Date(resource.last_modified+'Z');
         return resource;
       })
     );
